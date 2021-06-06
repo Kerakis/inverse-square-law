@@ -2,16 +2,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Inverse Square Law</title>
+    <title>Inverse Square Law Calculator</title>
     <script src="js/functions.js" defer></script>
   </head>
   <body>
-    <p>What is the original intensity of the beam?</p>
+    <label for="problemType">What are you solving for?</label>
+    <select id="problemType">
+      <option value="distance">Distance</option>
+      <option value="intensity">Intensity</option>
+    </select>
+
+    <p id="originalIntensityQuestion"></p>
     <input id="intensity1" type="text" />
-    <p>What is the original source-to-image-receptor distance?</p>
-    <input id="distance" type="text" />
-    <p>What is the new intensity of the beam?</p>
+    <p id="originalDistanceQuestion"></p>
+    <input id="distance1" type="text" />
+    <p id="newIntensityQuestion"></p>
     <input id="intensity2" type="text" />
+    <p id="newDistanceQuestion"></p>
+    <input id="distance2" type="text" />
     <p id="answer"></p>
     <button type="button" name="button" id="button">Submit</button>
   </body>
