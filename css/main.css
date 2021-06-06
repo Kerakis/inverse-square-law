@@ -1,4 +1,17 @@
+footer {
+  bottom: 0;
+  position: absolute;
+}
+
 input {
   font-size: 2em;
   margin: 10px 1px 0;
+}
+
+#distanceInputs {
+  display: none;
+}
+
+#intensityInputs {
+  display: none;
 }

@@ -1,91 +1,87 @@
 // Set global variables
-let intensity1 = null;
-let intensity2 = null;
-let distance1 = null;
+let distance1A = null;
+let distance1B = null;
 let distance2 = null;
-const select = document.querySelector("#problemType");
-const originalIntensityQuestion = document.querySelector(
-  "#originalIntensityQuestion"
-);
-const originalDistanceQuestion = document.querySelector(
-  "#originalDistanceQuestion"
-);
-const newIntensityQuestion = document.querySelector("#newIntensityQuestion");
-const newDistanceQuestion = document.querySelector("#newDistanceQuestion");
-const answer = document.querySelector("#answer");
+let intensity1A = null;
+let intensity1B = null;
+let intensity2 = null;
 
-// Function for solving the unknown distance using the inverse square law
+// Solve the unknown distance using the inverse square law
 function inverseSquareLawDistance() {
-  return Math.sqrt((intensity1 * (distance1 * distance1)) / intensity2);
+  return Math.sqrt((intensity1A * (distance1A * distance1A)) / intensity2);
 }
 
-// Function for solving the unknown intensity using the inverse square law
+// Solve the unknown intensity using the inverse square law
 function inverseSquareLawIntensity() {
-  return (intensity1 * (distance1 * distance1)) / (distance2 * distance2);
+  return (intensity1B * (distance1B * distance1B)) / (distance2 * distance2);
 }
 
-// Collects user input and runs the distance problem-solving function
+// Collect user input and run the distance problem-solving function
 function clickMeDistance() {
-  intensity1 = document.getElementById("intensity1").value;
-  intensity2 = document.getElementById("intensity2").value;
-  distance1 = document.getElementById("distance1").value;
+  intensity1A = document.getElementById("intensity1A").value;
+  intensity2 = document.getElementById("intensity2A").value;
+  distance1A = document.getElementById("distance1A").value;
   inverseSquareLawDistance();
   document.getElementById(
-    "answer"
+    "answerA"
   ).innerHTML = `The new distance is ${inverseSquareLawDistance().toFixed(2)}.`;
 }
 
-// Collects user input and runs the intensity problem-solving function
-function clickMeItensity() {
-  intensity1 = document.getElementById("intensity1").value;
-  distance1 = document.getElementById("distance1").value;
-  distance2 = document.getElementById("distance2").value;
+// Collect user input and run the intensity problem-solving function
+function clickMeIntensity() {
+  intensity1B = document.getElementById("intensity1B").value;
+  distance1B = document.getElementById("distance1B").value;
+  distance2 = document.getElementById("distance2B").value;
   inverseSquareLawIntensity();
   document.getElementById(
-    "answer"
+    "answerB"
   ).innerHTML = `The new intensity is ${inverseSquareLawIntensity().toFixed(
     2
   )}.`;
 }
 
-// Choose whether the user is solving for distance or intensity
-function problemType() {
-  const choice = select.value;
-
-  switch (choice) {
-    case "distance": // Show the user questions related to solving for distance
-      originalIntensityQuestion.textContent =
-        "What is the original intensity of the beam?";
-      originalDistanceQuestion.textContent =
-        "What is the original source-to-image-receptor distance?";
-      newIntensityQuestion.textContent =
-        "What is the new intensity of the beam?";
-      newDistanceQuestion.textContent = "";
-      answer.textContent = "";
-      document.getElementById("distance2").style.display = "none";
-      document.getElementById("intensity2").style.display = "block";
-      document
-        .getElementById("button")
-        .addEventListener("click", clickMeDistance);
-      break;
-    case "intensity": // Show the user questions related to solving for itensity
-      originalIntensityQuestion.textContent =
-        "What is the original intensity of the beam?";
-      originalDistanceQuestion.textContent =
-        "What is the original source-to-image-receptor distance?";
-      newIntensityQuestion.textContent = "";
-      newDistanceQuestion.textContent =
-        "What is the new source-to-image-receptor distance?";
-      answer.textContent = "";
-      document.getElementById("intensity2").style.display = "none";
-      document.getElementById("distance2").style.display = "block";
-      document
-        .getElementById("button")
-        .addEventListener("click", clickMeItensity);
-      break;
-    default:
-      // Require the user to choose which type of problem to solve
-      answer.textContent = "You must choose what you are solving for.";
-  }
+// Show inputs for solving distance and hide inputs for solving intensity
+function showDistance() {
+  document.getElementById("distanceInputs").style.display = "block";
+  document.getElementById("intensityInputs").style.display = "none";
 }
-select.addEventListener("change", problemType);
+
+// Show inputs for solving intensity and hide inputs for solving distance
+function showIntensity() {
+  document.getElementById("intensityInputs").style.display = "block";
+  document.getElementById("distanceInputs").style.display = "none";
+}
+
+// Clear values from distance inputs
+function clearDistanceValues() {
+  document.getElementById("intensity1A").value = "";
+  document.getElementById("distance1A").value = "";
+  document.getElementById("intensity2A").value = "";
+}
+
+// Clear values from intensity inputs
+function clearIntensityValues() {
+  document.getElementById("intensity1B").value = "";
+  document.getElementById("distance1B").value = "";
+  document.getElementById("distance2B").value = "";
+}
+
+// Add on click event listeners to the appropriate buttons
+document
+  .getElementById("distanceButton")
+  .addEventListener("click", clickMeDistance);
+document
+  .getElementById("intensityButton")
+  .addEventListener("click", clickMeIntensity);
+document
+  .getElementById("showDistanceButton")
+  .addEventListener("click", showDistance);
+document
+  .getElementById("showIntensityButton")
+  .addEventListener("click", showIntensity);
+document
+  .getElementById("clearDistanceValues")
+  .addEventListener("click", clearDistanceValues);
+document
+  .getElementById("clearIntensityValues")
+  .addEventListener("click", clearIntensityValues);
