@@ -28,7 +28,7 @@ function clickMeDistance() {
   //   +`${inverseSquareLawDistance().toFixed(2)}`;
   document.getElementById(
     "answerA"
-  ).innerHTML = `The new intensity is ${inverseSquareLawDistance().toFixed(2)}`;
+  ).innerHTML = `The new distance is ${inverseSquareLawDistance().toFixed(2)}`;
 }
 
 // Collect user input and run the intensity problem-solving function

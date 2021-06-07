@@ -10,89 +10,125 @@
       href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       rel="stylesheet"
     />
-
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script type="text/x-mathjax-config">
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ["\\(", "\\)"]],
+          processEscapes: true,
+        }
+      }
+    </script>
     <script src="js/functions.js" defer></script>
   </head>
   <body>
     <div class="content">
-      <header>
-        <h1>
-          Radiography
-          <span id="titleColorChange">Inverse Square Law</span> Calculator
-        </h1>
-      </header>
+      <div class="main">
+        <header>
+          <h1>
+            Radiography
+            <span id="titleColorChange">Inverse Square Law</span> Calculator
+          </h1>
+        </header>
 
-      <div class="selection">
-        <h2>What are you solving for?</h2>
-        <button type="button" name="showDistanceButton" id="showDistanceButton">
-          Distance
-        </button>
-        <button
-          type="button"
-          name="showIntensityButton"
-          id="showIntensityButton"
-        >
-          Intensity
-        </button>
-      </div>
-      <div class="inputs">
-        <div id="distanceInputs">
-          <label for="intensity1A"
-            >What is the original intensity of the beam?</label
+        <div class="selection">
+          <h2>What are you solving for?</h2>
+          <button
+            type="button"
+            name="showDistanceButton"
+            id="showDistanceButton"
           >
-          <input id="intensity1A" type="text" />
-          <label for="distance1A"
-            >What is the original source-to-image-receptor distance?</label
-          >
-          <input id="distance1A" type="text" />
-          <label for="intensity2A"
-            >What is the new intensity of the beam?</label
-          >
-          <input id="intensity2A" type="text" />
-          <p id="answerA"><span id="answerSpanA"></span></p>
-          <button type="button" name="distanceButton" id="distanceButton">
-            Submit
+            Distance
           </button>
           <button
             type="button"
-            name="clearDistanceValues"
-            id="clearDistanceValues"
+            name="showIntensityButton"
+            id="showIntensityButton"
           >
-            Reset
+            Intensity
           </button>
         </div>
+        <div class="inputs">
+          <div id="distanceInputs">
+            <label for="intensity1A"
+              >What is the original intensity of the beam?</label
+            >
+            <input id="intensity1A" type="text" />
+            <label for="distance1A"
+              >What is the original source to image-receptor distance?</label
+            >
+            <input id="distance1A" type="text" />
+            <label for="intensity2A"
+              >What is the new intensity of the beam?</label
+            >
+            <input id="intensity2A" type="text" />
+            <p id="answerA"><span id="answerSpanA"></span></p>
+            <button type="button" name="distanceButton" id="distanceButton">
+              Submit
+            </button>
+            <button
+              type="button"
+              name="clearDistanceValues"
+              id="clearDistanceValues"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <div class="inputs">
+          <div id="intensityInputs">
+            <label for="intensity1B"
+              >What is the original intensity of the beam?</label
+            >
+            <input id="intensity1B" type="text" />
+            <label for="distance1B"
+              >What is the original source to image-receptor distance?</label
+            >
+            <input id="distance1B" type="text" />
+            <label for="distance2B"
+              >What is the new source to image-receptor distance?</label
+            >
+            <input id="distance2B" type="text" />
+            <p id="answerB"><span id="answerSpanB"></span></p>
+            <button type="button" name="intensityButton" id="intensityButton">
+              Submit
+            </button>
+            <button
+              type="button"
+              name="clearIntensityValues"
+              id="clearIntensityValues"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="inputs">
-        <div id="intensityInputs">
-          <label for="intensity1B"
-            >What is the original intensity of the beam?</label
-          >
-          <input id="intensity1B" type="text" />
-          <label for="distance1B"
-            >What is the original source-to-image-receptor distance?</label
-          >
-          <input id="distance1B" type="text" />
-          <label for="distance2B"
-            >What is the new source-to-image-receptor distance?</label
-          >
-          <input id="distance2B" type="text" />
-          <p id="answerB"><span id="answerSpanB"></span></p>
-          <button type="button" name="intensityButton" id="intensityButton">
-            Submit
-          </button>
-          <button
-            type="button"
-            name="clearIntensityValues"
-            id="clearIntensityValues"
-          >
-            Reset
-          </button>
+      <div class="info">
+        <div id="legendTitle">
+          <h2>The Inverse Square Law</h2>
+        </div>
+        <div class="legend">
+          <p class="legendText">Solving for Distance uses the formula:</p>
+          <p>$$ D_2=\sqrt{I_1\cdot D_1^2\over I_2} $$</p>
+          <p class="legendText">Solving for Intensity uses the formula:</p>
+          <p>$$ I_2 = \frac{I_1\cdot D_1^2}{D_2^2} $$</p>
+          <p class="legendText">\( I_1 = \) The original Intensity</p>
+          <p class="legendText">
+            \( D_1 = \) The original source to image-receptor Distance
+          </p>
+          <p class="legendText">\( I_2 = \) The new Intensity</p>
+          <p class="legendText">
+            \( D_2 = \) The new source to image-receptor Distance
+          </p>
         </div>
       </div>
     </div>
-    <div class="background">
-      <div class="blur"></div>
-    </div>
+    <div class="background"></div>
     <footer>
       Made with <span id="heart">&#10084;</span> by
       <a
