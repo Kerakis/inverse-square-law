@@ -97,6 +97,13 @@ label {
   text-align: left;
 }
 
+.answers {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
 .background {
   background-image: url("../images/xray.jpg");
   background-position: center;
@@ -175,14 +182,10 @@ label {
   z-index: 2;
 }
 
-#answerA,
-#answerB {
-  margin: 1rem;
-}
-
-#answerSpanA,
-#answerSpanB {
+#answerDistance,
+#answerIntensity {
   color: #00abff;
+  margin: 0 1rem 0 1rem;
 }
 
 #distanceInputs {

@@ -21,14 +21,10 @@ function clickMeDistance() {
   intensity1A = document.getElementById("intensity1A").value;
   intensity2 = document.getElementById("intensity2A").value;
   distance1A = document.getElementById("distance1A").value;
-  inverseSquareLawDistance();
-  // Try to get this to make the answer blue.
-  // document.getElementById("answerDistance").innerHTML += `The new distance is `;
-  // document.getElementById("answerSpanDistance").innerHTML =
-  //   +`${inverseSquareLawDistance().toFixed(2)}`;
-  document.getElementById(
-    "answerDistance"
-  ).innerHTML = `The new distance is ${inverseSquareLawDistance().toFixed(2)}`;
+  const answer = inverseSquareLawDistance().toFixed(2);
+  const leadIn = `The new distance is: `;
+  document.getElementById("distanceLeadIn").innerHTML = `${leadIn}`;
+  document.getElementById("answerDistance").innerHTML = `${answer}`;
 }
 
 // Collect user input and run the intensity problem-solving function
@@ -36,12 +32,10 @@ function clickMeIntensity() {
   intensity1B = document.getElementById("intensity1B").value;
   distance1B = document.getElementById("distance1B").value;
   distance2 = document.getElementById("distance2B").value;
-  inverseSquareLawIntensity();
-  document.getElementById(
-    "answerIntensity"
-  ).innerHTML = `The new intensity is ${inverseSquareLawIntensity().toFixed(
-    2
-  )}`;
+  const answer = inverseSquareLawIntensity().toFixed(2);
+  const leadIn = `The new intensity is: `;
+  document.getElementById("intensityLeadIn").innerHTML = `${leadIn}`;
+  document.getElementById("answerIntensity").innerHTML = `${answer}`;
 }
 
 // Show inputs for solving distance and hide inputs for solving intensity
@@ -62,6 +56,7 @@ function clearDistanceValues() {
   document.getElementById("distance1A").value = "";
   document.getElementById("intensity2A").value = "";
   document.getElementById("answerDistance").innerHTML = "";
+  document.getElementById("distanceLeadIn").innerHTML = "";
 }
 
 // Clear values from intensity inputs
@@ -70,6 +65,7 @@ function clearIntensityValues() {
   document.getElementById("distance1B").value = "";
   document.getElementById("distance2B").value = "";
   document.getElementById("answerIntensity").innerHTML = "";
+  document.getElementById("intensityLeadIn").innerHTML = "";
 }
 
 // Add on click event listeners to the appropriate buttons
