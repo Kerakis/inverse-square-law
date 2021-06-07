@@ -22,9 +22,13 @@ function clickMeDistance() {
   intensity2 = document.getElementById("intensity2A").value;
   distance1A = document.getElementById("distance1A").value;
   inverseSquareLawDistance();
+  // Try to get this to make the answer blue.
+  // document.getElementById("answerA").innerHTML += `The new distance is `;
+  // document.getElementById("answerSpanA").innerHTML =
+  //   +`${inverseSquareLawDistance().toFixed(2)}`;
   document.getElementById(
     "answerA"
-  ).innerHTML = `The new distance is ${inverseSquareLawDistance().toFixed(2)}.`;
+  ).innerHTML = `The new intensity is ${inverseSquareLawDistance().toFixed(2)}`;
 }
 
 // Collect user input and run the intensity problem-solving function
@@ -37,7 +41,7 @@ function clickMeIntensity() {
     "answerB"
   ).innerHTML = `The new intensity is ${inverseSquareLawIntensity().toFixed(
     2
-  )}.`;
+  )}`;
 }
 
 // Show inputs for solving distance and hide inputs for solving intensity

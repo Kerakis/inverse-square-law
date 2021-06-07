@@ -4,63 +4,103 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Radiography Inverse Square Law Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="js/functions.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Radiography Inverse Square Law Calculator</h1>
-    </header>
-    <div class="selection">
-      <h2>What are you solving for?</h2>
-      <button type="button" name="showDistanceButton" id="showDistanceButton">
-        Distance
-      </button>
-      <button type="button" name="showIntensityButton" id="showIntensityButton">
-        Intensity
-      </button>
-    </div>
-    <div class="inputs">
-      <div id="distanceInputs">
-        <p>What is the original intensity of the beam?</p>
-        <input id="intensity1A" type="text" />
-        <p>What is the original source-to-image-receptor distance?</p>
-        <input id="distance1A" type="text" />
-        <p>What is the new intensity of the beam?</p>
-        <input id="intensity2A" type="text" />
-        <p id="answerA"></p>
-        <button type="button" name="distanceButton" id="distanceButton">
-          Submit
+    <div class="content">
+      <header>
+        <h1>
+          Radiography
+          <span id="titleColorChange">Inverse Square Law</span> Calculator
+        </h1>
+      </header>
+
+      <div class="selection">
+        <h2>What are you solving for?</h2>
+        <button type="button" name="showDistanceButton" id="showDistanceButton">
+          Distance
         </button>
         <button
           type="button"
-          name="clearDistanceValues"
-          id="clearDistanceValues"
+          name="showIntensityButton"
+          id="showIntensityButton"
         >
-          Clear Values
+          Intensity
         </button>
       </div>
-    </div>
-    <div class="inputs">
-      <div id="intensityInputs">
-        <p>What is the original intensity of the beam?</p>
-        <input id="intensity1B" type="text" />
-        <p>What is the original source-to-image-receptor distance?</p>
-        <input id="distance1B" type="text" />
-        <p>What is the new source-to-image-receptor distance?</p>
-        <input id="distance2B" type="text" />
-        <p id="answerB"></p>
-        <button type="button" name="intensityButton" id="intensityButton">
-          Submit
-        </button>
-        <button
-          type="button"
-          name="clearIntensityValues"
-          id="clearIntensityValues"
-        >
-          Clear Values
-        </button>
+      <div class="inputs">
+        <div id="distanceInputs">
+          <label for="intensity1A"
+            >What is the original intensity of the beam?</label
+          >
+          <input id="intensity1A" type="text" />
+          <label for="distance1A"
+            >What is the original source-to-image-receptor distance?</label
+          >
+          <input id="distance1A" type="text" />
+          <label for="intensity2A"
+            >What is the new intensity of the beam?</label
+          >
+          <input id="intensity2A" type="text" />
+          <p id="answerA"><span id="answerSpanA"></span></p>
+          <button type="button" name="distanceButton" id="distanceButton">
+            Submit
+          </button>
+          <button
+            type="button"
+            name="clearDistanceValues"
+            id="clearDistanceValues"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+      <div class="inputs">
+        <div id="intensityInputs">
+          <label for="intensity1B"
+            >What is the original intensity of the beam?</label
+          >
+          <input id="intensity1B" type="text" />
+          <label for="distance1B"
+            >What is the original source-to-image-receptor distance?</label
+          >
+          <input id="distance1B" type="text" />
+          <label for="distance2B"
+            >What is the new source-to-image-receptor distance?</label
+          >
+          <input id="distance2B" type="text" />
+          <p id="answerB"><span id="answerSpanB"></span></p>
+          <button type="button" name="intensityButton" id="intensityButton">
+            Submit
+          </button>
+          <button
+            type="button"
+            name="clearIntensityValues"
+            id="clearIntensityValues"
+          >
+            Reset
+          </button>
+        </div>
       </div>
     </div>
-    <footer>&copy; Rob Upchurch 2021</footer>
+    <div class="background">
+      <div class="blur"></div>
+    </div>
+    <footer>
+      Made with <span id="heart">&#10084;</span> by
+      <a
+        href="mailto:rlupchurch3@gmail.com?subject=The%20Inverse%20Square%20Law%20Calculator"
+        id="nameColorChange"
+        >Rob Upchurch</a
+      >
+      &copy; 2021
+    </footer>
   </body>
 </html>
