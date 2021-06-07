@@ -187,11 +187,18 @@ label {
 #answerDistance,
 #answerIntensity {
   color: #00abff;
+  font-weight: bold;
   margin: 0 1rem 0 1rem;
+  visibility: hidden;
 }
 
 #distanceInputs {
   display: none;
+}
+
+#distanceLeadIn,
+#intensityLeadIn {
+  visibility: hidden;
 }
 
 #heart {

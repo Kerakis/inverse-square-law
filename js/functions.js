@@ -25,10 +25,16 @@ function clickMeDistance() {
   const leadIn = `The new distance is: `;
   const errorNumbersOnly = `Please only enter numbers.`;
   const errorBlank = `Please enter data into each input field.`;
-  if (intensity1A === "" && intensity2 === "" && distance1A === "") {
+  document.getElementById("answerDistance").style.visibility = "visible";
+  document.getElementById("distanceLeadIn").style.visibility = "visible";
+  if (intensity1A === "" || intensity2 === "" || distance1A === "") {
     document.getElementById("distanceLeadIn").innerHTML = `${errorBlank}`;
     document.getElementById("answerDistance").innerHTML = ``;
-  } else if (Number.isNaN(answer)) {
+  } else if (
+    Number.isNaN(intensity1A) ||
+    Number.isNaN(intensity2) ||
+    Number.isNaN(distance1A)
+  ) {
     document.getElementById("distanceLeadIn").innerHTML = `${errorNumbersOnly}`;
     document.getElementById("answerDistance").innerHTML = ``;
   } else {
@@ -46,10 +52,16 @@ function clickMeIntensity() {
   const leadIn = `The new intensity is: `;
   const errorNumbersOnly = `Please only enter numbers.`;
   const errorBlank = `Please enter data into each input field.`;
-  if (intensity1B === "" && distance1B === "" && distance2 === "") {
+  document.getElementById("answerIntensity").style.visibility = "visible";
+  document.getElementById("intensityLeadIn").style.visibility = "visible";
+  if (intensity1B === "" || distance1B === "" || distance2 === "") {
     document.getElementById("intensityLeadIn").innerHTML = `${errorBlank}`;
     document.getElementById("answerIntensity").innerHTML = ``;
-  } else if (Number.isNaN(answer)) {
+  } else if (
+    Number.isNaN(intensity1B) ||
+    Number.isNaN(distance1B) ||
+    Number.isNaN(distance2)
+  ) {
     document.getElementById(
       "intensityLeadIn"
     ).innerHTML = `${errorNumbersOnly}`;
@@ -78,8 +90,8 @@ function clearDistanceValues() {
   document.getElementById("intensity1A").value = "";
   document.getElementById("distance1A").value = "";
   document.getElementById("intensity2A").value = "";
-  document.getElementById("answerDistance").innerHTML = "";
-  document.getElementById("distanceLeadIn").innerHTML = "";
+  document.getElementById("answerDistance").style.visibility = "hidden";
+  document.getElementById("distanceLeadIn").style.visibility = "hidden";
 }
 
 // Clear values from intensity inputs
@@ -87,8 +99,8 @@ function clearIntensityValues() {
   document.getElementById("intensity1B").value = "";
   document.getElementById("distance1B").value = "";
   document.getElementById("distance2B").value = "";
-  document.getElementById("answerIntensity").innerHTML = "";
-  document.getElementById("intensityLeadIn").innerHTML = "";
+  document.getElementById("answerIntensity").style.visibility = "hidden";
+  document.getElementById("intensityLeadIn").style.visibility = "hidden";
 }
 
 // Restricts input for the given textbox to the given inputFilter.
