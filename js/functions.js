@@ -23,11 +23,11 @@ function clickMeDistance() {
   distance1A = document.getElementById("distance1A").value;
   inverseSquareLawDistance();
   // Try to get this to make the answer blue.
-  // document.getElementById("answerA").innerHTML += `The new distance is `;
-  // document.getElementById("answerSpanA").innerHTML =
+  // document.getElementById("answerDistance").innerHTML += `The new distance is `;
+  // document.getElementById("answerSpanDistance").innerHTML =
   //   +`${inverseSquareLawDistance().toFixed(2)}`;
   document.getElementById(
-    "answerA"
+    "answerDistance"
   ).innerHTML = `The new distance is ${inverseSquareLawDistance().toFixed(2)}`;
 }
 
@@ -38,7 +38,7 @@ function clickMeIntensity() {
   distance2 = document.getElementById("distance2B").value;
   inverseSquareLawIntensity();
   document.getElementById(
-    "answerB"
+    "answerIntensity"
   ).innerHTML = `The new intensity is ${inverseSquareLawIntensity().toFixed(
     2
   )}`;
@@ -61,6 +61,7 @@ function clearDistanceValues() {
   document.getElementById("intensity1A").value = "";
   document.getElementById("distance1A").value = "";
   document.getElementById("intensity2A").value = "";
+  document.getElementById("answerDistance").innerHTML = "";
 }
 
 // Clear values from intensity inputs
@@ -68,6 +69,7 @@ function clearIntensityValues() {
   document.getElementById("intensity1B").value = "";
   document.getElementById("distance1B").value = "";
   document.getElementById("distance2B").value = "";
+  document.getElementById("answerIntensity").innerHTML = "";
 }
 
 // Add on click event listeners to the appropriate buttons
