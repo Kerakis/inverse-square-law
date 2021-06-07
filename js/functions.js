@@ -91,6 +91,33 @@ function clearIntensityValues() {
   document.getElementById("intensityLeadIn").innerHTML = "";
 }
 
+// Restricts input for the given textbox to the given inputFilter.
+function setInputFilter(textbox, inputFilter) {
+  [
+    "input",
+    "keydown",
+    "keyup",
+    "mousedown",
+    "mouseup",
+    "select",
+    "contextmenu",
+    "drop"
+  ].forEach((event) => {
+    textbox.addEventListener(event, function noNumbers() {
+      if (inputFilter(this.value)) {
+        this.oldValue = this.value;
+        this.oldSelectionStart = this.selectionStart;
+        this.oldSelectionEnd = this.selectionEnd;
+      } else if (Object.prototype.hasOwnProperty.call(this, "oldValue")) {
+        this.value = this.oldValue;
+        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+      } else {
+        this.value = "";
+      }
+    });
+  });
+}
+
 // Add click event listeners to the appropriate buttons
 document
   .getElementById("distanceButton")
@@ -110,6 +137,21 @@ document
 document
   .getElementById("clearIntensityValues")
   .addEventListener("click", clearIntensityValues);
+
+// Restricts non-numberical input into the textboxes
+const intensityInputChecker = document.querySelectorAll(".intensityFields");
+for (let i = 0; i < intensityInputChecker.length; i += 1) {
+  setInputFilter(intensityInputChecker[i], (value) =>
+    /^-?\d*[.,]?\d*$/.test(value)
+  );
+}
+
+const distanceInputChecker = document.querySelectorAll(".distanceFields");
+for (let i = 0; i < distanceInputChecker.length; i += 1) {
+  setInputFilter(distanceInputChecker[i], (value) =>
+    /^-?\d*[.,]?\d*$/.test(value)
+  );
+}
 
 // Add keypress event listeners to the input fields
 const distanceInputFields = document.querySelectorAll(".distanceFields");
