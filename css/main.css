@@ -17,6 +17,11 @@ body {
   line-height: 1.6;
 }
 
+a {
+  color: #00abff;
+  text-decoration: none;
+}
+
 a:link,
 a:visited,
 a:hover,
@@ -149,6 +154,17 @@ label {
   text-align: left;
 }
 
+.imageContainer {
+  align-content: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: auto;
+  max-width: 100%;
+  text-align: center;
+  width: 480px;
+}
+
 .info {
   align-self: center;
   background: rgba(0, 0, 0, 0.6);
@@ -184,6 +200,83 @@ label {
   z-index: 2;
 }
 
+.patientImage {
+  order: 1;
+}
+
+.radiationImage {
+  order: 3;
+}
+
+.slider {
+  order: 2;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: url("../images/radiation.svg");
+  border: 0;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.slider::-moz-range-thumb {
+  background: url("../images/radiation.svg");
+  border: 0;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.sliderBox {
+  align-self: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #00abff;
+  border-radius: 4px;
+  color: #fff;
+  margin-bottom: 5rem;
+  margin-top: 2.5rem;
+  order: 3;
+  padding: 20px;
+  width: 80%;
+  z-index: 2;
+}
+
+.sliderContainer {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sliderImages {
+  width: 50px;
+}
+
+.sliderInfo {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-left: 4.5rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.sliderResponse {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  max-width: 80%;
+}
+
+.sliderText {
+  color: #00abff;
+  font-weight: bold;
+  margin: 0 0 0 0.5rem;
+}
+
 #answerDistance,
 #answerIntensity {
   color: #00abff;
@@ -210,7 +303,14 @@ label {
   display: none;
 }
 
-#legendTitle {
+#ISLImage {
+  border: 1px solid #00abff;
+  border-radius: 4px;
+  width: 100%;
+}
+
+#legendTitle,
+#sliderTitle {
   text-align: center;
 }
 

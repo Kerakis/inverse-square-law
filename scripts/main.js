@@ -183,3 +183,18 @@ for (let i = 0; i < intensityInputFields.length; i += 1) {
     }
   });
 }
+
+// Show values for the slider element
+const slider = document.getElementById("myRange");
+const sid = document.getElementById("sliderDistanceText");
+const intensity = document.getElementById("sliderDoseText");
+sid.innerHTML = slider.value;
+intensity.innerHTML = "0.2";
+
+slider.oninput = function SID() {
+  sid.innerHTML = this.value;
+  const newIntensity = parseFloat(
+    ((0.2 * (72 * 72)) / (this.value * this.value)).toFixed(2)
+  );
+  intensity.innerHTML = `${newIntensity}`;
+};

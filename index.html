@@ -148,6 +148,22 @@
         <div id="legendTitle">
           <h2>The Inverse Square Law</h2>
         </div>
+        <div class="imageContainer">
+          <img
+            id="ISLImage"
+            src="images/ISL.svg"
+            alt="The Inverse Square Law"
+          />
+          <p>
+            <a
+              href="https://en.wikipedia.org/wiki/Inverse-square_law#/media/File:Inverse_square_law.svg"
+              title="Creative Commons Attribution-Share Alike 3.0"
+              target="_blank"
+              >Inverse Square Law</a
+            >
+            by Borb CC BY-SA 3.0
+          </p>
+        </div>
         <div class="legend">
           <p class="legendText">Solving for Distance uses the formula:</p>
           <p>$$ D_2=\sqrt{I_1\cdot D_1^2\over I_2} $$</p>
@@ -161,6 +177,45 @@
           <p class="legendText">
             \( D_2 = \) The new source to image-receptor Distance
           </p>
+        </div>
+      </div>
+      <div class="sliderBox">
+        <div id="sliderTitle">
+          <h2>Visualization of Distance Changes</h2>
+        </div>
+        <div class="sliderInfo">
+          <p>
+            Let's assume that an average person undergoing a PA chest x-ray exam
+            will receive a dose of approximately 0.2mGy from a technique of 100
+            kVp and 2 mAs at a source to image-receptor distance of 72".
+            Assuming this, use the following slider to move the x-ray tube
+            closer to or further from the patient to see how the patient's dose
+            will be affected.
+          </p>
+        </div>
+        <div class="sliderContainer">
+          <div class="patientImage">
+            <img
+              class="sliderImages"
+              src="images/person.svg"
+              alt="The Patient"
+            />
+          </div>
+          <input
+            type="range"
+            min="12"
+            max="144"
+            value="72"
+            class="slider"
+            id="myRange"
+          />
+        </div>
+        <div class="sliderResponse">
+          <p>
+            Distance from Radiation Source:
+            <span class="sliderText" id="sliderDistanceText"></span>"
+          </p>
+          <p>Dose: <span class="sliderText" id="sliderDoseText"></span> mGy</p>
         </div>
       </div>
     </div>
