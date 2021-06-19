@@ -189,12 +189,12 @@ const slider = document.getElementById("myRange");
 const sid = document.getElementById("sliderDistanceText");
 const intensity = document.getElementById("sliderDoseText");
 sid.innerHTML = slider.value;
-intensity.innerHTML = "0.2";
+intensity.innerHTML = "0.1";
 
 slider.oninput = function SID() {
   sid.innerHTML = this.value;
   const newIntensity = parseFloat(
-    ((0.2 * (72 * 72)) / (this.value * this.value)).toFixed(2)
+    ((0.1 * (72 * 72)) / (this.value * this.value)).toFixed(3)
   );
   intensity.innerHTML = `${newIntensity}`;
 };
