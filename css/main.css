@@ -104,6 +104,19 @@ label {
   text-align: left;
 }
 
+option {
+  align-items: center;
+  background-image: url("../images/tick.png");
+  background-position-x: center;
+  background-position-y: -3px;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 42px;
+  justify-content: space-evenly;
+  width: 100%;
+  z-index: -1;
+}
+
 .answers {
   align-items: center;
   display: flex;
@@ -218,8 +231,8 @@ label {
   background: url("../images/radiation.svg");
   border: 0;
   cursor: pointer;
-  height: 50px;
-  width: 50px;
+  height: 25px;
+  width: 25px;
 }
 
 .slider::-moz-range-thumb {
@@ -248,6 +261,7 @@ label {
   align-content: center;
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
 }
@@ -275,6 +289,17 @@ label {
   color: #00abff;
   font-weight: bold;
   margin: 0 0 0 0.5rem;
+}
+
+.tickmarks {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-top: -23px;
+  order: 4;
+  padding-top: 0;
+  width: 100%;
+  width: 80%;
 }
 
 #answerDistance,
