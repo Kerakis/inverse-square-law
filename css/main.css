@@ -185,7 +185,7 @@ option {
   border-radius: 4px;
   color: #fff;
   margin-bottom: 5rem;
-  margin-top: 8rem;
+  margin-top: 5rem;
   order: 2;
   padding: 20px;
   width: 80%;
@@ -250,7 +250,6 @@ option {
   border-radius: 4px;
   color: #fff;
   margin-bottom: 5rem;
-  margin-top: 2.5rem;
   order: 3;
   padding: 20px;
   width: 80%;
@@ -259,7 +258,7 @@ option {
 
 .sliderContainer {
   align-content: center;
-  align-items: center;
+  align-items: flex-end;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -273,8 +272,7 @@ option {
 .sliderInfo {
   display: block;
   margin-bottom: 0.5rem;
-  margin-left: 4.5rem;
-  margin-top: 1.5rem;
+  margin-left: 5rem;
   text-align: left;
 }
 
