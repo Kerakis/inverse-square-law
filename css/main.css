@@ -310,6 +310,10 @@ option {
   visibility: hidden;
 }
 
+#copyright {
+  font-size: 0.9rem;
+}
+
 #distanceInputs {
   display: none;
 }
