@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
-    <title>Radiography Inverse Square Law Calculator</title>
+    <title>Radiography mAs-Distance Calculator</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -25,12 +25,12 @@
         }
       }
     </script>
-    <script src="scripts/main.js" defer></script>
+    <script src="scripts/md.js" defer></script>
   </head>
   <body>
     <div class="navigation">
       <button
-        onclick="location.href=`#`"
+        onclick="location.href=`index.html`"
         type="button"
         name="inverseSquarelaw"
         id="inverseSquarelaw"
@@ -38,7 +38,7 @@
         Inverse Square Law
       </button>
       <button
-        onclick="location.href=`masdistance.html`"
+        onclick="location.href=`#`"
         type="button"
         name="mAsDistanceformula"
         id="mAsDistanceformula"
@@ -59,7 +59,7 @@
         <header>
           <h1>
             Radiography
-            <span id="titleColorChange">Inverse Square Law</span> Calculator
+            <span id="titleColorChange">mAs-Distance Formula</span> Calculator
           </h1>
         </header>
 
@@ -72,25 +72,14 @@
           >
             Distance
           </button>
-          <button
-            type="button"
-            name="showIntensityButton"
-            id="showIntensityButton"
-          >
-            Intensity
+          <button type="button" name="showmAsButton" id="showmAsButton">
+            mAs
           </button>
         </div>
         <div class="inputs">
           <div id="distanceInputs">
-            <label for="intensity1A"
-              >What is the original intensity of the beam?</label
-            >
-            <input
-              id="intensity1A"
-              class="distanceFields"
-              type="text"
-              required
-            />
+            <label for="mas1A">What is the original mAs of the beam?</label>
+            <input id="mas1A" class="distanceFields" type="text" required />
             <label for="distance1A"
               >What is the original source to image-receptor distance?</label
             >
@@ -100,15 +89,8 @@
               type="text"
               required
             />
-            <label for="intensity2A"
-              >What is the new intensity of the beam?</label
-            >
-            <input
-              id="intensity2A"
-              class="distanceFields"
-              type="text"
-              required
-            />
+            <label for="mas2A">What is the new mAs of the beam?</label>
+            <input id="mas2A" class="distanceFields" type="text" required />
             <div class="answers">
               <div id="distanceLeadIn"></div>
               <div id="answerDistance">Hidden Text</div>
@@ -126,46 +108,25 @@
           </div>
         </div>
         <div class="inputs">
-          <div id="intensityInputs">
-            <label for="intensity1B"
-              >What is the original intensity of the beam?</label
-            >
-            <input
-              id="intensity1B"
-              class="intensityFields"
-              type="text"
-              required
-            />
+          <div id="masInputs">
+            <label for="mas1B">What is the original mAs of the beam?</label>
+            <input id="mas1B" class="masFields" type="text" required />
             <label for="distance1B"
               >What is the original source to image-receptor distance?</label
             >
-            <input
-              id="distance1B"
-              class="intensityFields"
-              type="text"
-              required
-            />
+            <input id="distance1B" class="masFields" type="text" required />
             <label for="distance2B"
               >What is the new source to image-receptor distance?</label
             >
-            <input
-              id="distance2B"
-              class="intensityFields"
-              type="text"
-              required
-            />
+            <input id="distance2B" class="masFields" type="text" required />
             <div class="answers">
-              <div id="intensityLeadIn"></div>
-              <div id="answerIntensity">Hidden Text</div>
+              <div id="masLeadIn"></div>
+              <div id="answermAs">Hidden Text</div>
             </div>
-            <button type="button" name="intensityButton" id="intensityButton">
+            <button type="button" name="mAsButton" id="mAsButton">
               Submit
             </button>
-            <button
-              type="button"
-              name="clearIntensityValues"
-              id="clearIntensityValues"
-            >
+            <button type="button" name="clearmAsValues" id="clearmAsValues">
               Reset
             </button>
           </div>
@@ -173,7 +134,7 @@
       </div>
       <div class="info">
         <div id="legendTitle">
-          <h2>The Inverse Square Law</h2>
+          <h2>The mAs-Distance Compensation Formula</h2>
         </div>
         <div class="imageContainer">
           <img
@@ -198,23 +159,24 @@
             from a point-source origin, they spread out. This can be visualized
             with visibile light by turning on a flashlight in a dark room. The
             beam of light spreads out much like how an x-ray beam will spread
-            out from an x-ray tube assembly. The intensity of the x-ray beam is
-            inversely proportional to the square of the distance from the
-            source.
+            out from an x-ray tube assembly. As the distance between the
+            radiation source and image receptor is increased, the mAs must be
+            increased to compensate for fewer x-ray photons striking the image
+            receptor in order to maintain the same exposure.
           </p>
         </div>
         <div class="legend">
-          <p class="legendText">Solving for Distance uses the formula:</p>
-          <p>$$ D_2=\sqrt{I_1\cdot D_1^2\over I_2} $$</p>
-          <p class="legendText">Solving for Intensity uses the formula:</p>
-          <p>$$ I_2 = \frac{I_1\cdot D_1^2}{D_2^2} $$</p>
-          <p class="legendText">\( I_1 = \) The original Intensity</p>
+          <p class="legendText">Solving for distance uses the formula:</p>
+          <p>$$ D_2=\sqrt{mAs_2\cdot D_1^2\over mAs_1} $$</p>
+          <p class="legendText">Solving for mAs uses the formula:</p>
+          <p>$$ mAs_2 = \frac{mAs_1\cdot D_2^2}{D_1^2} $$</p>
+          <p class="legendText">\( mAs_1 = \) The original mAs</p>
           <p class="legendText">
-            \( D_1 = \) The original source to image-receptor Distance
+            \( D_1 = \) The original source to image-receptor distance
           </p>
-          <p class="legendText">\( I_2 = \) The new Intensity</p>
+          <p class="legendText">\( mAs_2 = \) The new mAs</p>
           <p class="legendText">
-            \( D_2 = \) The new source to image-receptor Distance
+            \( D_2 = \) The new source to image-receptor distance
           </p>
         </div>
       </div>
@@ -224,12 +186,13 @@
         </div>
         <div class="sliderInfo">
           <p>
-            Let's assume that an average person undergoing a PA chest x-ray exam
-            will receive a dose of approximately 0.1 mSv from a technique of 100
-            kVp and 2 mAs at a source to image-receptor distance of 72".
-            Assuming this, use the following slider to move the x-ray tube
-            closer to or further from the patient to see how the patient's dose
-            will be affected.
+            Let's assume that an abdominal x-ray exam is performed on a patient
+            with a technique of 80 kVp and 20 mAs at a source to image-receptor
+            distance of 72". Let's also assume that this produces an acceptable
+            exposure, but we would like to change the SID. Use the following
+            slider to move the x-ray tube closer to or further from the patient
+            to see what the mAs would need to be changed to in order to produce
+            the same exposure at the chosen SID.
           </p>
         </div>
         <div class="sliderContainer">
