@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Radiography mAs-Distance Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script type="text/x-mathjax-config">
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ["\\(", "\\)"]],
+          processEscapes: true,
+        }
+      }
+    </script>
+    <script src="scripts/mgcf.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/8ddffd7d82.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="navigation">
+      <button
+        onclick="location.href=`index.html`"
+        type="button"
+        name="inverseSquarelaw"
+        id="inverseSquarelaw"
+      >
+        Inverse Square Law
+      </button>
+      <button
+        onclick="location.href=`masdistance.html`"
+        type="button"
+        name="mAsDistanceformula"
+        id="mAsDistanceformula"
+      >
+        mAs-Distance Formula
+      </button>
+      <button
+        onclick="location.href=`#`"
+        type="button"
+        name="mAsGCFformula"
+        id="mAsGCFformula"
+      >
+        mAs-GCF Formula
+      </button>
+    </div>
+    <div class="content">
+      <div class="main">
+        <header>
+          <h1>
+            Radiography
+            <span id="titleColorChange">mAs-GCF Formula</span> Calculator
+          </h1>
+        </header>
+
+        <div class="selection">
+          <h2>What are you solving for?</h2>
+          <button type="button" name="showGCFButton" id="showGCFButton">
+            GCF
+          </button>
+          <button type="button" name="showmAsButton" id="showmAsButton">
+            mAs
+          </button>
+        </div>
+        <div class="inputs">
+          <div id="GCFInputs">
+            <label for="mas1A">What is the original mAs of the beam?</label>
+            <input id="mas1A" class="GCFFields" type="text" required />
+            <label for="GCF1A">What is the original grid ratio?</label>
+            <select id="GCF1A" class="GCFFields" required>
+              <option value="1">No Grid</option>
+              <option value="2">5:1</option>
+              <option value="3">6:1</option>
+              <option value="4">8:1</option>
+              <option value="5">12:1</option>
+              <option value="6">16:1</option>
+            </select>
+            <label for="mas2A">What is the new mAs of the beam?</label>
+            <input id="mas2A" class="GCFFields" type="text" required />
+            <div class="answers">
+              <div id="GCFLeadIn"></div>
+              <div id="answerGCF">Hidden Text</div>
+            </div>
+            <button type="submit" name="GCFButton" id="GCFButton">
+              Submit
+            </button>
+            <button type="button" name="clearGCFValues" id="clearGCFValues">
+              Reset
+            </button>
+          </div>
+        </div>
+        <div class="inputs">
+          <div id="masInputs">
+            <label for="mas1B">What is the original mAs of the beam?</label>
+            <input id="mas1B" class="masFields" type="text" required />
+            <label for="GCF1B">What is the original grid ratio?</label>
+            <select id="GCF1B" class="masFields" required>
+              <option value="1">No Grid</option>
+              <option value="2">5:1</option>
+              <option value="3">6:1</option>
+              <option value="4">8:1</option>
+              <option value="5">12:1</option>
+              <option value="6">16:1</option>
+            </select>
+            <label for="GCF2B">What is the new grid ratio?</label>
+            <select id="GCF2B" class="masFields" required>
+              <option value="1">No Grid</option>
+              <option value="2">5:1</option>
+              <option value="3">6:1</option>
+              <option value="4">8:1</option>
+              <option value="5">12:1</option>
+              <option value="6">16:1</option>
+            </select>
+            <div class="answers">
+              <div id="masLeadIn"></div>
+              <div id="answermAs">Hidden Text</div>
+            </div>
+            <button type="button" name="mAsButton" id="mAsButton">
+              Submit
+            </button>
+            <button type="button" name="clearmAsValues" id="clearmAsValues">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <div id="legendTitle">
+          <h2>The mAs-Grid Conversion Factor Formula</h2>
+        </div>
+        <div class="formulaInfo">
+          <p>
+            A radiographic grid is a device placed between the image receptor
+            and the object being radiographed in order to absorb scattered
+            radiation exiting the object. Limiting the scattered radiation
+            reaching the image receptor improves the quality of the x-ray image
+            by increasing radiographic contrast. Grids are identified by their
+            grid ratio, which is the height of the lead strips inside of the
+            grid to the space between each lead strip. The table below shows the
+            most common grid ratios and the corresponding grid conversion
+            factors.
+          </p>
+          <table>
+            <tr>
+              <th>Grid Ratios</th>
+              <th>Grid Conversion Factor (GCF)</th>
+            </tr>
+            <tr>
+              <td>No Grid</td>
+              <td>1</td>
+            </tr>
+
+            <tr>
+              <td>5:1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>6:1</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>8:1</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>12:1</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>16:1</td>
+              <td>6</td>
+            </tr>
+          </table>
+        </div>
+        <div class="legend">
+          <p class="legendText">Solving for the GCF uses the formula:</p>
+          <p>$$ GCF_2 = \frac{mAs_2\cdot GCF_1}{mAs_1} $$</p>
+          <p class="legendText">Solving for mAs uses the formula:</p>
+          <p>$$ mAs_2 = \frac{mAs_1\cdot GCF_2}{GCF_1} $$</p>
+          <p class="legendText">\( mAs_1 = \) The original mAs</p>
+          <p class="legendText">
+            \( GCF_1 = \) The original grid conversion factor
+          </p>
+          <p class="legendText">\( mAs_2 = \) The new mAs</p>
+          <p class="legendText">\( GCF_2 = \) The new grid conversion factor</p>
+        </div>
+      </div>
+    </div>
+    <div class="background"></div>
+    <footer>
+      <div class="radIcon">
+        <i class="fas fa-skull"></i>
+      </div>
+      <div class="signature">
+        Made with <span id="heart">&#10084;</span> by
+        <a
+          href="mailto:rlupchurch3@gmail.com?subject=The%20Inverse%20Square%20Law%20Calculator"
+          id="nameColorChange"
+          >Rob Upchurch</a
+        >
+        &copy; <span id="year"></span>
+      </div>
+    </footer>
+  </body>
+</html>

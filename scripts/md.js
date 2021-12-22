@@ -81,6 +81,7 @@ function showDistance() {
 function showmAs() {
   document.getElementById("masInputs").style.display = "block";
   document.getElementById("distanceInputs").style.display = "none";
+  document.getElementById("mas1B").focus();
 }
 
 // Clear values from distance inputs
@@ -190,3 +191,7 @@ slider.oninput = function SID() {
   );
   mAs.innerHTML = `${newmAs}`;
 };
+
+document
+  .getElementById("year")
+  .appendChild(document.createTextNode(new Date().getFullYear()));

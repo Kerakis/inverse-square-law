@@ -83,6 +83,7 @@ function showDistance() {
 function showIntensity() {
   document.getElementById("intensityInputs").style.display = "block";
   document.getElementById("distanceInputs").style.display = "none";
+  document.getElementById("intensity1B").focus();
 }
 
 // Clear values from distance inputs
@@ -198,3 +199,7 @@ slider.oninput = function SID() {
   );
   intensity.innerHTML = `${newIntensity}`;
 };
+
+document
+  .getElementById("year")
+  .appendChild(document.createTextNode(new Date().getFullYear()));
