@@ -187,7 +187,7 @@ mAs.innerHTML = "20";
 slider.oninput = function SID() {
   sid.innerHTML = this.value;
   const newmAs = parseFloat(
-    ((20 * (this.value * this.value)) / (72 * 72)).toFixed(3)
+    ((20 * (this.value * this.value)) / (72 * 72)).toFixed(1)
   );
   mAs.innerHTML = `${newmAs}`;
 };

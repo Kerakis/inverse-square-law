@@ -198,11 +198,8 @@ tr:nth-child(odd) {
 
 .formulaInfo {
   display: block;
-  margin-bottom: 1.5rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  margin-top: 1.5rem;
-  text-align: left;
+  margin: 1rem;
+  text-align: justify;
 }
 
 .legend {
@@ -210,15 +207,13 @@ tr:nth-child(odd) {
   margin: auto;
   max-width: 100%;
   text-align: left;
-  width: 480px;
+  width: 100%;
 }
 
 .legendText {
   display: block;
-  margin-bottom: 0.5rem;
-  margin-left: 4.5rem;
-  margin-top: 1.5rem;
-  text-align: left;
+  margin: 1rem;
+  text-align: justify;
 }
 
 .imageContainer {
@@ -347,7 +342,6 @@ tr:nth-child(odd) {
 }
 
 .sliderBox {
-  align-self: center;
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid #00abff;
   border-radius: 4px;
@@ -374,17 +368,17 @@ tr:nth-child(odd) {
 
 .sliderInfo {
   display: block;
-  margin-bottom: 0.5rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  text-align: left;
+  margin: 1rem;
+  text-align: justify;
 }
 
 .sliderResponse {
+  align-content: center;
+  align-items: center;
   display: flex;
-  justify-content: space-around;
-  margin: auto;
-  max-width: 80%;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+  width: 100%;
 }
 
 .sliderText {
@@ -466,27 +460,29 @@ tr:nth-child(odd) {
 
 @media only screen and (min-width: 600px) {
   /* For Desktops */
+  .formulaInfo {
+    margin: 1.5rem 5rem 1.5rem 4.5rem;
+  }
+
+  .legendText {
+    margin: 1.5rem 5rem 1.5rem 4.5rem;
+  }
+
   .navButtons {
     align-content: center;
-    align-self: center;
     display: flex;
     justify-content: space-around;
     width: 25%;
   }
 
   .navigation {
-    align-self: center;
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid #00abff;
-    border-radius: 4px;
-    color: #fff;
-    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
     position: fixed;
-    width: 100%;
-    z-index: 2;
+  }
+
+  .sliderInfo {
+    margin: 1.5rem 5rem 1.5rem 4.5rem;
   }
 
   .tickmarks {
