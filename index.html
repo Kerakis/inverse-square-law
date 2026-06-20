@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
@@ -9,14 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script
       id="MathJax-script"
       async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">
       MathJax = {
         tex: {
@@ -28,33 +26,29 @@
     <script src="scripts/main.js" defer></script>
     <script
       src="https://kit.fontawesome.com/8ddffd7d82.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="navigation">
       <button
-        onclick="location.href=`#`"
+        onclick="location.href = `#`"
         type="button"
         name="inverseSquarelaw"
-        class="navButtons"
-      >
+        class="navButtons">
         Inverse Square Law
       </button>
       <button
-        onclick="location.href=`masdistance.html`"
+        onclick="location.href = `masdistance.html`"
         type="button"
         name="mAsDistanceformula"
-        class="navButtons"
-      >
+        class="navButtons">
         mAs-Distance Formula
       </button>
       <button
-        onclick="location.href=`masgcf.html`"
+        onclick="location.href = `masgcf.html`"
         type="button"
         name="mAsGCFformula"
-        class="navButtons"
-      >
+        class="navButtons">
         mAs-GCF Formula
       </button>
     </div>
@@ -72,15 +66,13 @@
           <button
             type="button"
             name="showDistanceButton"
-            id="showDistanceButton"
-          >
+            id="showDistanceButton">
             Distance
           </button>
           <button
             type="button"
             name="showIntensityButton"
-            id="showIntensityButton"
-          >
+            id="showIntensityButton">
             Intensity
           </button>
         </div>
@@ -93,8 +85,7 @@
               id="intensity1A"
               class="distanceFields"
               type="text"
-              required
-            />
+              required />
             <label for="distance1A"
               >What is the original source to image-receptor distance?</label
             >
@@ -102,8 +93,7 @@
               id="distance1A"
               class="distanceFields"
               type="text"
-              required
-            />
+              required />
             <label for="intensity2A"
               >What is the new intensity of the beam?</label
             >
@@ -111,8 +101,7 @@
               id="intensity2A"
               class="distanceFields"
               type="text"
-              required
-            />
+              required />
             <div class="answers">
               <div id="distanceLeadIn"></div>
               <div id="answerDistance">Hidden Text</div>
@@ -123,8 +112,7 @@
             <button
               type="button"
               name="clearDistanceValues"
-              id="clearDistanceValues"
-            >
+              id="clearDistanceValues">
               Reset
             </button>
           </div>
@@ -138,8 +126,7 @@
               id="intensity1B"
               class="intensityFields"
               type="text"
-              required
-            />
+              required />
             <label for="distance1B"
               >What is the original source to image-receptor distance?</label
             >
@@ -147,8 +134,7 @@
               id="distance1B"
               class="intensityFields"
               type="text"
-              required
-            />
+              required />
             <label for="distance2B"
               >What is the new source to image-receptor distance?</label
             >
@@ -156,8 +142,7 @@
               id="distance2B"
               class="intensityFields"
               type="text"
-              required
-            />
+              required />
             <div class="answers">
               <div id="intensityLeadIn"></div>
               <div id="answerIntensity">Hidden Text</div>
@@ -168,8 +153,7 @@
             <button
               type="button"
               name="clearIntensityValues"
-              id="clearIntensityValues"
-            >
+              id="clearIntensityValues">
               Reset
             </button>
           </div>
@@ -183,8 +167,7 @@
           <img
             id="ISLImage"
             src="images/ISL.svg"
-            alt="The Inverse Square Law"
-          />
+            alt="The Inverse Square Law" />
           <p id="copyright">
             <a
               href="https://en.wikipedia.org/wiki/Inverse-square_law#/media/File:Inverse_square_law.svg"
@@ -241,8 +224,7 @@
             <img
               class="sliderImages"
               src="images/person.svg"
-              alt="The Patient"
-            />
+              alt="The Patient" />
           </div>
           <input
             type="range"
@@ -251,8 +233,7 @@
             value="72"
             class="slider"
             list="tickmarks"
-            id="myRange"
-          />
+            id="myRange" />
           <datalist class="tickmarks">
             <option class="tickLabels" value="12" label='12"'></option>
             <option class="tickLabels" value="24" label='24"'></option>
@@ -285,7 +266,9 @@
       <div class="signature">
         Made with <span id="heart">&#10084;</span> by
         <a
-          href="mailto:rlupchurch3@gmail.com?subject=The%20Inverse%20Square%20Law%20Calculator"
+          href="https://www.kerakis.com"
+          target="_blank"
+          rel="noopener noreferrer"
           id="nameColorChange"
           >Rob Upchurch</a
         >
